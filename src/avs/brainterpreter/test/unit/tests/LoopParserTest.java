@@ -21,17 +21,17 @@ public class LoopParserTest {
 	private static final String invalidTestString2 = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++].>+.+[++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
 	
 	@Test
-	public void testValid() throws ParseException{
+	public void testValid() {
 		LoopRepository loopRepository = new LoopRepository(testString);
 		assertEquals(5, loopRepository.getLoopCount());
 	}
 
-	@Test(expected = ParseException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testInvalid() throws ParseException{
 		new LoopRepository(invalidTestString);
 	}
 	
-	@Test(expected = ParseException.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testInvalid2() throws ParseException{
 		new BrainParser(invalidTestString2);
 	}

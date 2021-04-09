@@ -1,6 +1,5 @@
 package avs.brainterpreter.engine;
 
-import java.text.ParseException;
 import java.util.HashMap;
 
 import avs.brainterpreter.engine.constants.ValidCharacters;
@@ -19,9 +18,9 @@ public class LoopRepository {
 	/**
 	 * Search and compile all loops in the program
 	 * @param program the program to parse
-	 * @throws ParseException if loops cannot be read properly (missing bracket for example)
+	 * @throws IllegalArgumentException if loops cannot be read properly (missing bracket for example)
 	 */
-	public LoopRepository(String program) throws ParseException{
+	public LoopRepository(String program) throws IllegalArgumentException{
 		this.program = program;
 		initLoops();
 	}
@@ -29,7 +28,7 @@ public class LoopRepository {
 	/**
 	 * Associates each '[' character with the right ']'
 	 */
-	private void initLoops() throws ParseException{
+	private void initLoops() throws IllegalArgumentException{
 		int openingBracketCount = 0;
 		for(int index = 0; index < program.length(); index++){
 			char c = program.charAt(index);
@@ -39,7 +38,7 @@ public class LoopRepository {
 			if(c == ValidCharacters.LOOP_END) {
 				int openingBracketIndex = searchCorrespondingBracket(index);
 				if(openingBracketIndex == -1) {
-					throw new ParseException("Cannot find begin loop from the closing bracket", index);
+					throw new IllegalArgumentException("Character " + index + " : cannot find begin loop from the closing bracket");
 				}
 				// put new (key, value) ==> (index of '[', index of ']')
 				openingBrackets.put(openingBracketIndex, index);
@@ -47,7 +46,7 @@ public class LoopRepository {
 			}
 		}
 		if(openingBracketCount != openingBrackets.size()) {
-			throw new ParseException("Not all loops are closed.", 1);
+			throw new IllegalArgumentException("Not all loops are closed.");
 		}
 	}
 	

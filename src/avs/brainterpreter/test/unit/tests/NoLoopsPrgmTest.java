@@ -14,7 +14,7 @@ public class NoLoopsPrgmTest {
 			+ "+++++++----->>+++++++++++++++++++++++++++++++++++++++++++++++++.<<.<.";
 	
 	@Test
-	public void test() throws ParseException {
+	public void test(){
 		BrainParser brainParser = new BrainParser(program);
 		assertEquals("1+!", brainParser.execute());
 	}
