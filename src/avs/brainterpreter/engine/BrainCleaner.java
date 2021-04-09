@@ -25,21 +25,10 @@ public class BrainCleaner {
 	public String cleanString() {
 		StringBuilder stringBuilder = new StringBuilder();
 		for(char c : stringToClean.toCharArray()) {
-			if(isValidCharacter(c)) {
+			if(ValidCharacters.isValidCharacter(c)) {
 				stringBuilder.append(c);
 			}
 		}
 		return stringBuilder.toString();
-	}
-
-	private boolean isValidCharacter(char c) {
-		return c == ValidCharacters.LOOP_BEGIN
-				|| c == ValidCharacters.LOOP_END
-				|| c == ValidCharacters.POINTER_DECREMENT
-				|| c == ValidCharacters.POINTER_INCREMENT
-				|| c == ValidCharacters.VALUE_DECREMENT
-				|| c == ValidCharacters.VALUE_INCREMENT
-				|| c == ValidCharacters.VALUE_INPUT
-				|| c == ValidCharacters.VALUE_OUTPUT;
 	}
 }
