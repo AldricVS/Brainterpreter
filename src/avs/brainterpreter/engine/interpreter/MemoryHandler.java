@@ -1,4 +1,4 @@
-package avs.brainterpreter.engine;
+package avs.brainterpreter.engine.interpreter;
 
 /**
  * All the 30 000 bytes that brainfuck can handle will be stored in this class.

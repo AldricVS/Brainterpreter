@@ -1,4 +1,4 @@
-package avs.brainterpreter.engine;
+package avs.brainterpreter.engine.interpreter;
 
 import java.util.HashMap;
 

@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import avs.brainterpreter.engine.BrainCleaner;
+import avs.brainterpreter.engine.interpreter.BrainCleaner;
 
 public class CleaningTest {
 

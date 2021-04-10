@@ -2,7 +2,7 @@ package avs.brainterpreter.test.manual;
 
 import java.text.ParseException;
 
-import avs.brainterpreter.engine.BrainParser;
+import avs.brainterpreter.engine.interpreter.BrainParser;
 
 public class HelloWorldTest {
 	public static void main(String[] args) throws ParseException {

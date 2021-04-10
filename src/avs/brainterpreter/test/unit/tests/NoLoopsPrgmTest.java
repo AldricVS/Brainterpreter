@@ -6,7 +6,7 @@ import java.text.ParseException;
 
 import org.junit.Test;
 
-import avs.brainterpreter.engine.BrainParser;
+import avs.brainterpreter.engine.interpreter.BrainParser;
 
 public class NoLoopsPrgmTest {
 

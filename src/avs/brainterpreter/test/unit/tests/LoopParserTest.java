@@ -6,8 +6,8 @@ import java.text.ParseException;
 
 import org.junit.Test;
 
-import avs.brainterpreter.engine.BrainParser;
-import avs.brainterpreter.engine.LoopRepository;
+import avs.brainterpreter.engine.interpreter.BrainParser;
+import avs.brainterpreter.engine.interpreter.LoopRepository;
 
 public class LoopParserTest {
 	
