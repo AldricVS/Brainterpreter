@@ -9,14 +9,14 @@ import avs.brainterpreter.engine.interpreter.BrainParser;
 public class CommandLineHandler {
 	private String args[];
 	
-	public CommandLineHandler(String args[]) throws IllegalArgumentException{
-		if(args.length < 2) {
-			throw new IllegalArgumentException("At least 2 commands must be given");
-		}
+	public CommandLineHandler(String args[]){
 		this.args = args;
 	}
 	
 	public void executeCommand() throws IOException {
+		if(args.length < 2) {
+			throw new IllegalArgumentException("At least 2 commands must be given");
+		}
 		String firstCommand = args[0];
 		if("-P".equals(firstCommand)) {
 			executeProgram(args[1]);
