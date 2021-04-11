@@ -20,6 +20,7 @@ public class BrainParser {
 	 * 
 	 * @param program the full program in one string, it will be cleaned from
 	 *                comments and spaces
+	 * @throws IllegalArgumentException if error happened while parsing or cleaning (loops not closed for example)
 	 */
 	public BrainParser(String program) {
 		this(program, true);
@@ -31,6 +32,7 @@ public class BrainParser {
 	 * @param program      the full program in one string
 	 * @param needCleaning if program string need to be cleaned before starting
 	 *                     program
+	 * @throws IllegalArgumentException if error happened while parsing or cleaning (loops not closed for example)
 	 */
 	public BrainParser(String program, boolean needCleaning) {
 		if (needCleaning) {
