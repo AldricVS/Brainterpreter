@@ -79,14 +79,20 @@ public class MainWindow extends JFrame{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			launchButton.setText("Processing...");
+			launchButton.setEnabled(false);
 			try {
 				BrainParser brainParser = new BrainParser(programTextArea.getText());
 				String output = brainParser.execute();
+				if(output.isEmpty()) {
+					output = "Nothing to display";
+				}
 				outputTextField.setText(output);
 			}catch(IllegalArgumentException exception) {
 				JOptionPane.showMessageDialog(MainWindow.this, exception.getMessage(), "Syntax error", JOptionPane.ERROR_MESSAGE);
 			}
-			
+			launchButton.setText("Launch program");
+			launchButton.setEnabled(true);
 		}
 		
 	}
